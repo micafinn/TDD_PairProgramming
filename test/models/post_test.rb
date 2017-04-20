@@ -5,5 +5,11 @@ class PostTest < ActiveSupport::TestCase
     posts(:one).title = nil
     assert_nil posts(:one).title
     assert_equal false, posts(:one).valid?
-  end 
+  end
+
+  test "should be invalid without a body" do
+    posts(:one).body = nil
+    assert_nil posts(:one).body
+    assert_equal false, posts(:one).valid?
+  end
 end
