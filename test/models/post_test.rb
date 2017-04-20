@@ -16,4 +16,8 @@ class PostTest < ActiveSupport::TestCase
   test "post title should be a string" do
     assert_equal true, posts(:one).title.is_a?(String)
   end
+
+  test "post body should a string" do
+    assert_equal true, posts(:one).body.is_a?(String)
+  end
 end
