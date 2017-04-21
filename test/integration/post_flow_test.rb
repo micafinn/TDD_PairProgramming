@@ -18,4 +18,9 @@ class PostFlowTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Post title"
   end
 
+  test "can see form on posts#new route" do
+    get "/posts/new"
+    assert_select "form"
+  end
+
 end
