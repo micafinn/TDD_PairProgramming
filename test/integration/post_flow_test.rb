@@ -20,7 +20,12 @@ class PostFlowTest < ActionDispatch::IntegrationTest
 
   test "can see form on posts#new route" do
     get "/posts/new"
-    assert_select "form"
+
+    assert_select "form" do |elements|
+      elements.each do |element|
+        assert_select element, "input", 4
+      end
+    end
   end
 
 end
